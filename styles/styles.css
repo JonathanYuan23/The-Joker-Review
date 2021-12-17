@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-18 {
+    font-size: 18px;
+}
+.material-icons.md-24 {
+    font-size: 24px;
+}
+.material-icons.md-30 {
+    font-size: 30px;
+}
+.material-icons.md-36 {
+    font-size: 36px;
+}
+.material-icons.md-48 {
+    font-size: 48px;
+}
 
 * {
     font-family: 'Tinos', serif;
@@ -19,6 +30,7 @@ body {
 
 .landing {
     height: 100vh;
+    user-select: none;
 }
 
 .joker {
@@ -36,10 +48,64 @@ body {
     border-radius: 7px;
 }
 
-#scroll-down {
-    color: rgb(75, 75, 75);
+.audio-player {
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 93%;
+    left: 50%;
+    top: 87%;
+    transform: translateX(-50%);
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.song-info * {
+    font-family: 'Inter', sans-serif;
+}
+
+.song-name {
+    font-size: 12px;
+}
+
+.artist {
+    font-size: 10px;
+}
+
+.material-icons {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#song-control {
+    margin-left: 24px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.progress-container {
+    width: 250px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.progress {
+    background-color: rgb(112, 77, 161);
+    border-radius: 5px;
+    height: 100%;
+    width: 25%;
+    transition: width 0.1s linear;
+}
+
+#scroll-down {
+    position: absolute;
+    top: 94%;
     left: 50%;
     transform: translateX(-50%);
 }

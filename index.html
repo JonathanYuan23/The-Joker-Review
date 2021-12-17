@@ -14,7 +14,17 @@
     <body>
         <section class="landing">
             <div class="joker"></div>
-            <audio src="./assets/sounds/jokerTheme.mp3" id="audio"></audio>
+            <div class="audio-player">
+                <div class="song-info">
+                    <span class="song-name">The Joker Theme</span>
+                    <span class="artist">Hans Zimmer</span>
+                </div>
+                <span id="song-control" class="material-icons md-30"> play_arrow </span>
+                <div class="progress-container">
+                    <div class="progress"></div>
+                </div>
+                <audio src="./assets/sounds/jokerTheme.mp3" id="audio"></audio>
+            </div>
             <a href="#main">
                 <span id="scroll-down" class="material-icons md-36"> expand_more </span>
             </a>

@@ -13,8 +13,30 @@ const borderControl = (function () {
     });
 })();
 
-const audioPlayer = (function() {
+const audioPlayer = (function () {
+    // cache DOM
+    const audioPlayer = document.querySelector('.audio-player');
     const audio = document.querySelector('#audio');
-    const scrollDown = document.querySelector('#scroll-down');
-    scrollDown.addEventListener('click', () => audio.play()); 
+    const songControl = document.querySelector('#song-control');
+
+    // bind events
+    songControl.addEventListener('click', () => {
+        if (!audioPlayer.classList.contains('play')) {
+            play();
+        } else {
+            pause();
+        }
+    });
+
+    function play() {
+        audio.play();
+        audioPlayer.classList.add('play');
+        songControl.textContent = 'pause';
+    }
+
+    function pause() {
+        audio.pause();
+        audioPlayer.classList.remove('play');
+        songControl.textContent = 'play_arrow';
+    }
 })();
