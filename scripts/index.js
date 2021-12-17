@@ -1,4 +1,4 @@
-const borderControl = (function() {
+const borderControl = (function () {
     // cache DOM
     const body = document.querySelector('body');
     const MAX_SCROLL = 700;
@@ -14,5 +14,7 @@ const borderControl = (function() {
 })();
 
 const audioPlayer = (function() {
-
+    const audio = document.querySelector('#audio');
+    const scrollDown = document.querySelector('#scroll-down');
+    scrollDown.addEventListener('click', () => audio.play()); 
 })();
