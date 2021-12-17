@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+* {
+    font-family: 'Tinos', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    box-shadow: 0 0 200px 80px rgb(0, 0, 0) inset;
+}
+
+.landing {
+    height: 100vh;
+}
+
+.joker {
+    height: 506px;
+    width: 900px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../assets/images/comic\ joker\ crazed\ laughing.jpg');
+    background-size: 900px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 20px 10px rgb(0, 0, 0) inset;
+    border-radius: 7px;
+}
+
+#scroll-down {
+    color: rgb(75, 75, 75);
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    height: 100vh;
+}
