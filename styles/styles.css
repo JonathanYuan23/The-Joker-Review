@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Merriweather:ital,wght@0,300;1,300&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .material-icons.md-18 {
     font-size: 18px;
@@ -16,10 +16,6 @@
     font-size: 48px;
 }
 
-* {
-    font-family: 'Tinos', serif;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -28,12 +24,18 @@ body {
     box-shadow: 0 0 200px 80px rgb(0, 0, 0) inset;
 }
 
-.landing {
+/* 
+    ====================
+        LANDING PAGE 
+    ====================
+*/
+
+#landing {
     height: 100vh;
     user-select: none;
 }
 
-.joker {
+#joker {
     height: 506px;
     width: 900px;
     position: absolute;
@@ -48,14 +50,26 @@ body {
     border-radius: 7px;
 }
 
+#scroll-down {
+    position: absolute;
+    top: 94%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 
+    ====================
+        AUDIO PLAYER     
+    ====================
+*/
+
 .audio-player {
-    border: 2px solid rgba(0, 0, 0, 0.8);
-    padding: 7px 15px;
+    padding: 7px 18px;
     display: flex;
     align-items: center;
     position: absolute;
     left: 50%;
-    top: 87%;
+    top: 86%;
     transform: translateX(-50%);
 }
 
@@ -67,6 +81,7 @@ body {
 
 .song-info * {
     font-family: 'Inter', sans-serif;
+    color: rgb(41, 41, 41);
 }
 
 .song-name {
@@ -78,7 +93,7 @@ body {
 }
 
 .material-icons {
-    color: rgba(0, 0, 0, 0.8);
+    color: rgb(41, 41, 41);
 }
 
 #song-control {
@@ -88,7 +103,7 @@ body {
 }
 
 .progress-container {
-    width: 250px;
+    width: 300px;
     height: 5px;
     border-radius: 5px;
     background-color: rgb(230, 230, 230);
@@ -99,17 +114,107 @@ body {
     background-color: rgb(112, 77, 161);
     border-radius: 5px;
     height: 100%;
-    width: 25%;
-    transition: width 0.1s linear;
+    width: 0%;
+    transition: width 0.05s linear;
 }
 
-#scroll-down {
-    position: absolute;
-    top: 94%;
-    left: 50%;
-    transform: translateX(-50%);
-}
+/* 
+    ===============
+        ARTICLE     
+    ===============
+*/
 
 main {
     height: 100vh;
+    color: rgb(41, 41, 41);
+}
+
+.article {
+    width: 680px;
+    margin: auto;
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+.article-header {
+    font-family: 'Inter', sans-serif;
+}
+
+.article-title {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 56px;
+    margin-bottom: -10px;
+}
+
+.article-info {
+    font-size: 14px;
+    margin-top: 32px;
+}
+
+.author {
+    color: rgb(112, 77, 161);
+    font-weight: 500;
+    margin-right: 3px;
+}
+
+.article-body {
+    font-family: 'Tinos', serif;
+}
+
+.article-body p {
+    margin-top: 42px;
+    margin-bottom: -10px;
+    font-size: 21px;
+    line-height: 32px;
+}
+
+/* 
+    ===================
+        BLOCKQUOTES     
+    ===================
+*/
+
+blockquote {
+    margin: 0;
+    padding-left: 40px;
+}
+
+blockquote p {
+    color: rgb(117, 117, 117);
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+}
+
+blockquote p:nth-child(1) {
+    margin-bottom: -10px;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+blockquote p:nth-child(2) {
+    margin-top: 27px;
+}
+
+/* 
+    ==============
+        IMAGES     
+    ==============
+*/
+
+figure {
+    margin: 56px 0 0;
+}
+
+figure img {
+    width: 100%;
+}
+
+figcaption {
+    margin-top: 10px;
+    color: rgb(117, 117, 117);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
 }

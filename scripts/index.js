@@ -4,13 +4,13 @@ const borderControl = (function () {
     const MAX_SCROLL = 700;
 
     // bind events
-    document.addEventListener('scroll', (e) => {
+    document.addEventListener('scroll', setShadow);
+
+    function setShadow(e) {
         const blurPercentage = Math.max(MAX_SCROLL - window.scrollY, 0) / MAX_SCROLL;
         const spreadPercentage = Math.max(MAX_SCROLL - window.scrollY, 0) / MAX_SCROLL;
         body.style.boxShadow = `0 0 ${blurPercentage * 200}px ${spreadPercentage * 80}px black inset`;
-
-        console.log(blurPercentage, spreadPercentage);
-    });
+    }
 })();
 
 const audioPlayer = (function () {
@@ -18,6 +18,8 @@ const audioPlayer = (function () {
     const audioPlayer = document.querySelector('.audio-player');
     const audio = document.querySelector('#audio');
     const songControl = document.querySelector('#song-control');
+    const progressContainer = document.querySelector('.progress-container');
+    const progress = document.querySelector('.progress');
 
     // bind events
     songControl.addEventListener('click', () => {
@@ -27,6 +29,10 @@ const audioPlayer = (function () {
             pause();
         }
     });
+
+    audio.addEventListener('timeupdate', updateProgress);
+    audio.addEventListener('ended', pause);
+    progressContainer.addEventListener('click', setProgress);
 
     function play() {
         audio.play();
@@ -38,5 +44,19 @@ const audioPlayer = (function () {
         audio.pause();
         audioPlayer.classList.remove('play');
         songControl.textContent = 'play_arrow';
+    }
+
+    function updateProgress(e) {
+        const { duration, currentTime } = e.target;
+        const progressPercent = (currentTime / duration) * 100;
+        progress.style.width = `${progressPercent}%`;
+    }
+
+    function setProgress(e) {
+        const width = e.currentTarget.clientWidth;
+        const clickX = e.offsetX;
+        const duration = audio.duration;
+
+        audio.currentTime = (clickX / width) * duration;
     }
 })();
